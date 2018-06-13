@@ -1,0 +1,8 @@
+(PLUS 2 8)
+(MINUS 10 4)
+(TIMES 3 4)
+(GREATER 7 6)
+(LESS 5 1)
+(EQ 3 3)
+
+
