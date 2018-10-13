@@ -9,13 +9,11 @@ public class ReadFile {
     public String readInputFile() throws IOException {
         FileReader fileReader = new FileReader(Config.PATH);
         int data;
-        final int endOfFile = -1;
-
-        while((data = fileReader.read()) != endOfFile){
-            char ch = (char)data;
-            fileContent = fileContent + ch;
+        while((data = fileReader.read()) != Config.END_OF_FILE){
+            char expression = (char)data;
+            fileContent = fileContent + expression;
         }
-        fileContent = fileContent + "$";
+        fileContent = fileContent + Config.END_TOKEN;
         return fileContent;
     }
 }

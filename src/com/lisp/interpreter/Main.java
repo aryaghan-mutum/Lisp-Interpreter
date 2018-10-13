@@ -8,8 +8,6 @@ import parser.Eval;
 
 public class Main {
 
-    public static final String NIL = "NIL";
-
     static int ef = 0;
     static int t = 0;
     static String es = "";
@@ -18,14 +16,20 @@ public class Main {
 
     static Lexer lexer = new Lexer();
     static Eval ev = new Eval();
+    static Print print = new Print();
 
     public static void main(String [] args) throws IOException{
 
         ReadFile readfile = new ReadFile();
         fileContent = readfile.readInputFile();
+        lexer.verifyInputString(fileContent);
 
-        verify(fileContent);
+        someFunc();
+        someFunc2();
+        someFunc3();
+    }
 
+    private static void someFunc() {
         while(ef != 1){
             String tokens = lexer.getNextToken(fileContent);
             if(tokens.equals("(")){
@@ -43,23 +47,28 @@ public class Main {
                 t++;
             }
         }
+    }
+
+    private static void someFunc2() {
         if(ef != 1){
             int r = roots.size();
             for(int j = 0; j < r; j++){
-                //prtr(roots.get(j));
+                //print(roots.get(j));
                 //System.out.println();
             }
         }
         else
             System.out.println("ERROR: Invalid " + es);
+    }
 
+    private static void someFunc3() {
         int r = roots.size();
         Node fin = null;
 
         for(int j = 0; j < r; j++){
             fin = roots.get(j);
             if(fin.value.equals("T")||fin.value.equals("NIL")||ev.intchk(fin)){
-                printList(fin);
+                print.printList(fin);
                 System.out.println();
             }
             else if(fin.value.equals("")){
@@ -69,11 +78,11 @@ public class Main {
                 if(ef != 1){
                     if(fin.value.equals("")){
                         System.out.print("(");
-                        printList(fin);
+                        print.printList(fin);
                         System.out.print(")");
                     }
                     else{
-                        printList(fin);
+                        print.printList(fin);
                     }
                 }
                 else{
@@ -111,66 +120,6 @@ public class Main {
         }
         else
             return;
-    }
-
-    public static void prtr(Node ptr){
-        if(ptr != null){
-            if(ptr.right == null && ptr.left == null)
-                System.out.print(ptr.value);
-            else{
-                System.out.print("(");
-                prtr(ptr.left);
-                System.out.print(" . ");
-                prtr(ptr.right);
-                System.out.print(")");
-            }
-        }
-    }
-
-    public static void verify(String token){
-        int count = 0;
-        int parentheses = 0;
-
-        while(token.charAt(count) != '$'){
-           if(token.charAt(count) == '(')
-               parentheses++;
-           else if(token.charAt(count) == ')')
-               parentheses--;
-           count++;
-        }
-
-        if(parentheses != 0){
-            ef = 1;
-            es = "does not follow grammar";
-            //break;
-        }
-    }
-
-    public static void printList(Node ptr){
-        if(ptr != null/*&!(ptr.value.equals("nil"))*/){
-            if(ptr.right == null && ptr.left == null)
-                System.out.print(ptr.value);
-            else{
-                if(ptr.left.value.equals("")){
-                    System.out.print("(");
-                    printList(ptr.left);
-                    System.out.print(")");
-                }
-                else 
-                    printList(ptr.left);
-
-                System.out.print(" ");
-                
-                if(ptr.right.value.equals(NIL))
-                    System.out.print("");
-                else if(ptr.right.value.equals(""))
-                    printList(ptr.right);
-                else {
-                    System.out.print(" . ");
-                    printList(ptr.right);
-                }
-            }
-        }
     }
 }
 

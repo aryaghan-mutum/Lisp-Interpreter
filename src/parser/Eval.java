@@ -22,11 +22,15 @@ public class Eval {
     public static final String COND = "COND";
     public static final String DEFUN = "DEFUN";
 
-    static int ef = 0;
-    static String es = "";
+    public enum Primitive{
+        PLUS, MINUS, LESS, TIMES, GREATER, EQ, CONS, CAR, CDR, ATOM, INT, QUOTE, NULL, NIL, T, COND, DEFUN
+    }
 
-    static String[] arr = { "T", "NIL", "CAR", "CDR", "CONS", "ATOM", "EQ", "NULL", "INT", "PLUS", "MINUS", "TIMES", "LESS", "GREATER", "COND", "QUOTE", "DEFUN" };
-    static Node dlist = new Node("");
+    private int errorFlag = 0;
+    private String errorStatement = "";
+
+    private String[] primitive = { "T", "NIL", "CAR", "CDR", "CONS", "ATOM", "EQ", "NULL", "INT", "PLUS", "MINUS", "TIMES", "LESS", "GREATER", "COND", "QUOTE", "DEFUN" };
+    Node dlist = new Node("");
 
     public Node eval(Node aList, Node fullTree){
         if(intchk(fullTree))
@@ -79,8 +83,8 @@ public class Eval {
                     }
                 }
                 else{
-                    ef = 1;
-                    es = "undefined : invalid length";
+                    errorFlag = 1;
+                    errorStatement = "undefined : invalid length";
                     return fullTree;
                 }
             }
@@ -131,8 +135,8 @@ public class Eval {
                     }
                 }
                 else{
-                    ef = 1;
-                    es = "undefined : invalid length";
+                    errorFlag = 1;
+                    errorStatement = "undefined : invalid length";
                     return fullTree;
                 }
             }
@@ -144,8 +148,8 @@ public class Eval {
                     return fullTree;
                 }
                 else{
-                    ef = 1;
-                    es = "undefined : invalid length";
+                    errorFlag = 1;
+                    errorStatement = "undefined : invalid length";
                     return fullTree;
                 }
             }
@@ -157,8 +161,8 @@ public class Eval {
                     return fullTree;
                 }
                 else{
-                    ef = 1;
-                    es = "undefined : invalid length";
+                    errorFlag = 1;
+                    errorStatement = "undefined : invalid length";
                     return fullTree;
                 }
             }
@@ -169,14 +173,14 @@ public class Eval {
                     return eval(aList, n.right);
                 }
                 else{
-                    ef = 1;
-                    es = "undefined : invalid actual param size";
+                    errorFlag = 1;
+                    errorStatement = "undefined : invalid actual param size";
                     return fullTree;
                 }
             }
             else{
-                ef = 1;
-                es = "undefined: INVALID EXPRESSION";
+                errorFlag = 1;
+                errorStatement = "undefined: INVALID EXPRESSION";
                 return fullTree;
             }
         }
@@ -186,8 +190,8 @@ public class Eval {
             return n;
         }
         else{
-            ef = 1;
-            es = "eval of literal atoms not defined";
+            errorFlag = 1;
+            errorStatement = "eval of literal atoms not defined";
             return fullTree;
         }
     }
@@ -224,14 +228,14 @@ public class Eval {
                 return new Node(String.valueOf(result));
             }
             else{
-                ef = 1;
-                es = "undefined: not an integer";
+                errorFlag = 1;
+                errorStatement = "undefined: not an integer";
                 return(fullTree);
             }
         }
         else{
-            ef = 1;
-            es = "undefined: not an integer";
+            errorFlag = 1;
+            errorStatement = "undefined: not an integer";
             return(fullTree);
         }
     }
@@ -245,14 +249,14 @@ public class Eval {
                 return new Node(String.valueOf(result));
             }
             else{
-                ef = 1;
-                es = "undefined: not an integer";
+                errorFlag = 1;
+                errorStatement = "undefined: not an integer";
                 return(fullTree);
             }
         }
         else{
-            ef = 1;
-            es = "undefined: not an integer";
+            errorFlag = 1;
+            errorStatement = "undefined: not an integer";
             return(fullTree);
         }
     }
@@ -266,14 +270,14 @@ public class Eval {
                 return new Node(String.valueOf(result));
             }
             else{
-                ef = 1;
-                es = "undefined: not an integer";
+                errorFlag = 1;
+                errorStatement = "undefined: not an integer";
                 return(fullTree);
             }
         }
         else{
-            ef = 1;
-            es = "undefined: not an integer";
+            errorFlag = 1;
+            errorStatement = "undefined: not an integer";
             return(fullTree);
         }
     }
@@ -286,14 +290,14 @@ public class Eval {
                 return (firstParam < secondParam) ? new Node(String.valueOf(T)) : new Node(String.valueOf(NIL));
             }
             else{
-                ef = 1;
-                es = "undefined: not an integer";
+                errorFlag = 1;
+                errorStatement = "undefined: not an integer";
                 return(fullTree);
             }
         }
         else{
-            ef = 1;
-            es = "undefined: not an integer";
+            errorFlag = 1;
+            errorStatement = "undefined: not an integer";
             return(fullTree);
         }
     }
@@ -306,14 +310,14 @@ public class Eval {
                 return (firstParam > secondParam) ? new Node(String.valueOf(T)) : new Node(String.valueOf(NIL));
             }
             else{
-                ef = 1;
-                es = "undefined: not an integer";
+                errorFlag = 1;
+                errorStatement = "undefined: not an integer";
                 return(fullTree);
             }
         }
         else{
-            ef = 1;
-            es = "undefined: not an integer";
+            errorFlag = 1;
+            errorStatement = "undefined: not an integer";
             return(fullTree);
         }
     }
@@ -326,14 +330,14 @@ public class Eval {
                 return (firstParam.equals(secondParam)) ? new Node(String.valueOf(T)) : new Node(String.valueOf(NIL));
             }
             else{
-                ef = 1;
-                es = "undefined: not an integer";
+                errorFlag = 1;
+                errorStatement = "undefined: not an integer";
                 return(fullTree);
             }
         }
         else{
-            ef = 1;
-            es = "undefined: not an integer";
+            errorFlag = 1;
+            errorStatement = "undefined: not an integer";
             return(fullTree);
         }
     }
@@ -362,8 +366,8 @@ public class Eval {
                 return (tem.value.equals(NIL)) ? cond(aList, fullTree.right) : eval(aList, car(cdr(fullTree.left)));
             }
             else{
-                ef = 1;
-                es = "undefined: invalid length or expression";
+                errorFlag = 1;
+                errorStatement = "undefined: invalid length or expression";
                 return fullTree;
             }
         }
@@ -371,37 +375,37 @@ public class Eval {
             if(fullTree.left.value.equals("") && len == 2){
                 Node tem = eval(aList,car(fullTree.left));
                 if(tem.value.equals(NIL)){
-                    ef = 1;
-                    es = "undefined: invalid  expression";
+                    errorFlag = 1;
+                    errorStatement = "undefined: invalid  expression";
                     return fullTree;
                 }
                 else
                     return eval(aList,car(cdr(fullTree.left)));
             }
             else{
-                ef = 1;
-                es = "undefined: invalid length or expression";
+                errorFlag = 1;
+                errorStatement = "undefined: invalid length or expression";
                 return fullTree;
             }
         }
     }
 
-    public static Node car(Node fullTree){
+    public Node car(Node fullTree){
         if(!(atom(fullTree)))
             return fullTree.left;
         else{
-            ef = 1;
-            es = "undefined- Car not defined on singe atom";
+            errorFlag = 1;
+            errorStatement = "undefined- Car not defined on singe atom";
             return fullTree;
         }
     }
 
-    public static Node cdr(Node fullTree){
+    public Node cdr(Node fullTree){
         if(!(atom(fullTree)))
             return fullTree.right;
         else{
-            ef = 1;
-            es = "undefined- Cdr not defined on singe atom";
+            errorFlag = 1;
+            errorStatement = "undefined- Cdr not defined on singe atom";
             return fullTree;
         }
     }
@@ -410,15 +414,15 @@ public class Eval {
         return fullTree.left;
     }
 
-    public static Node defun(Node fullTree){
+    public Node defun(Node fullTree){
         Node temp = dlist;
         while (temp.right != null && temp.left != null ){
             temp = temp.right;
         }
         Node q = car(fullTree);
         if((!(checklist(car(fullTree.right)))) || checkKeywords(q) || checkRepeats(car(fullTree.right))){
-            ef = 1;
-            es = "function name or param list problem";
+            errorFlag = 1;
+            errorStatement = "function name or param list problem";
             return fullTree;
         }
         else{
@@ -434,23 +438,23 @@ public class Eval {
         }
     }
 
-    public static boolean checklist(Node node){
+    public boolean checklist(Node node){
         return (node.value.equals(NIL) || node.value.equals("")) ? true : false;
     }
 
-    public static boolean checkKeywords(Node node){
+    public boolean checkKeywords(Node node){
         String val = node.value;
         for (int keyword = 0; keyword < 17; keyword++){
-            if(val.equals(arr[keyword])){
-                ef = 1;
-                es = "matches keywords";
+            if(val.equals(primitive[keyword])){
+                errorFlag = 1;
+                errorStatement = "matches keywords";
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean bound(Node x, Node z){
+    public boolean bound(Node x, Node z){
         boolean ans = false;
         while(!(z.value.equals(NIL))){
             if(z.left.left.value.equals(x.value)){
@@ -464,7 +468,7 @@ public class Eval {
         return ans;
     }
 
-    public static boolean checkRepeats(Node fullTree) {
+    public boolean checkRepeats(Node fullTree) {
         Node temp = fullTree;
         while(!(temp.value.equals(NIL))){
             if(check(temp.left, temp.right) || (checklist(temp.left)))
@@ -475,11 +479,11 @@ public class Eval {
         return false;
     }
 
-    public static boolean checkLength(Node a, Node b) {
+    public boolean checkLength(Node a, Node b) {
         return (length(a) == length(b)) ? true : false;
     }
 
-    public static boolean check(Node x, Node y){
+    public boolean check(Node x, Node y){
         if (checkKeywords(x)) return true;
         else{
             boolean flag = false;
@@ -495,7 +499,7 @@ public class Eval {
         }
     }
 
-    public static Node getval(Node x, Node z){
+    public Node getval(Node x, Node z){
         Node ans = null;
         while(!(z.value.equals("NIL"))){
             if(z.left.left.value.equals(x.value)){
@@ -529,7 +533,7 @@ public class Eval {
         return al;
     }
 
-    public static Node construct(Node a, Node b){
+    public Node construct(Node a, Node b){
         Node k = new Node("");
         k.right = b;
         k.left = a;

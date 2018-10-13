@@ -1,4 +1,3 @@
-(PLUS 2 8)
 (MINUS 10 4)
 (TIMES 3 4)
 (GREATER 7 6)
