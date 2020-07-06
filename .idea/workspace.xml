@@ -2,13 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c1ac29d-29f6-46f7-bf40-9f2383fe3733" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LispInterpreter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/LispInterpreter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/com/lisp/interpreter/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/com/lisp/interpreter/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/com/lisp/interpreter/Print.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/helpers/Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/helpers/ReadFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/lexer/Lexer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/parser/Eval$Primitive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/parser/Eval.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LispInterpreter/parser/ParseTree.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Lisp-Interpreter" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Lisp-Interpreter" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Lisp-Interpreter" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Lisp-Interpreter" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build setup" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Lisp-Interpreter" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -69,11 +132,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="8" />
-    <option name="y" value="23" />
-    <option name="width" value="1273" />
-    <option name="height" value="705" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="" />
+        <option name="nonRecursive" value="true" />
+        <option name="outputLevel" value="DEBUG" />
+        <option name="updateIndicesOnProjectOpen" value="false" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1eKTeAQiqeqwWOYrqRVHrXVIJE1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -83,26 +150,62 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="PATH&#9;PSI&#9;JAVA://java.nio.file.Path" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.lisp.interpreter.Main" />
-      <module name="LispInterpreter" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="Lisp-Interpreter.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Lisp-Interpreter [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.Lisp-Interpreter [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -119,6 +222,68 @@
     </task>
     <servers />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="302" y="23" key="#Lisp_Interpreter" timestamp="1594073447670">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state x="302" y="23" key="#Lisp_Interpreter/0.23.1366.677@0.23.1366.677" timestamp="1594073447670" />
+    <state x="160" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594074086913">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state x="160" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1366.677@0.23.1366.677" timestamp="1594074086913" />
+    <state x="837" y="203" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594071371959">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state x="837" y="203" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1366.677@0.23.1366.677" timestamp="1594071371959" />
+    <state x="503" y="73" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1594074074036">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state x="503" y="73" key="#com.intellij.ide.macro.MacrosDialog/0.23.1366.677@0.23.1366.677" timestamp="1594074074036" />
+    <state x="459" y="158" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1594074066870">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state x="459" y="158" key="#com.intellij.ide.util.TreeClassChooserDialog/0.23.1366.677@0.23.1366.677" timestamp="1594074066870" />
+    <state x="513" y="126" key="EnvironmentVariablesDialog" timestamp="1594073269236">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state x="513" y="126" key="EnvironmentVariablesDialog/0.23.1366.677@0.23.1366.677" timestamp="1594073269236" />
+    <state width="1324" height="122" key="GridCell.Tab.0.bottom" timestamp="1594073932129">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state width="1324" height="122" key="GridCell.Tab.0.bottom/0.23.1366.677@0.23.1366.677" timestamp="1594073932129" />
+    <state width="1324" height="122" key="GridCell.Tab.0.center" timestamp="1594073932128">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state width="1324" height="122" key="GridCell.Tab.0.center/0.23.1366.677@0.23.1366.677" timestamp="1594073932128" />
+    <state width="1324" height="122" key="GridCell.Tab.0.left" timestamp="1594073932127">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state width="1324" height="122" key="GridCell.Tab.0.left/0.23.1366.677@0.23.1366.677" timestamp="1594073932127" />
+    <state width="1324" height="122" key="GridCell.Tab.0.right" timestamp="1594073932129">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state width="1324" height="122" key="GridCell.Tab.0.right/0.23.1366.677@0.23.1366.677" timestamp="1594073932129" />
+    <state width="1324" height="122" key="GridCell.Tab.1.bottom" timestamp="1594073932132">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state width="1324" height="122" key="GridCell.Tab.1.bottom/0.23.1366.677@0.23.1366.677" timestamp="1594073932132" />
+    <state width="1324" height="122" key="GridCell.Tab.1.center" timestamp="1594073932130">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state width="1324" height="122" key="GridCell.Tab.1.center/0.23.1366.677@0.23.1366.677" timestamp="1594073932130" />
+    <state width="1324" height="122" key="GridCell.Tab.1.left" timestamp="1594073932129">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state width="1324" height="122" key="GridCell.Tab.1.left/0.23.1366.677@0.23.1366.677" timestamp="1594073932129" />
+    <state width="1324" height="122" key="GridCell.Tab.1.right" timestamp="1594073932131">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state width="1324" height="122" key="GridCell.Tab.1.right/0.23.1366.677@0.23.1366.677" timestamp="1594073932131" />
+    <state x="192" y="23" key="SettingsEditor" timestamp="1594073917639">
+      <screen x="0" y="23" width="1366" height="677" />
+    </state>
+    <state x="192" y="23" key="SettingsEditor/0.23.1366.677@0.23.1366.677" timestamp="1594073917639" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -126,6 +291,11 @@
           <url>file://$PROJECT_DIR$/src/helpers/ReadFile.java</url>
           <line>17</line>
           <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/lisp/interpreter/Main.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

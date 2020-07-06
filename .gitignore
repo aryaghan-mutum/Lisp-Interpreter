@@ -1,6 +1,11 @@
+# Gradle
+.gradle
+gradle
 
 # build
 /out
+build
+
 
 # misc
 .DS_Store
